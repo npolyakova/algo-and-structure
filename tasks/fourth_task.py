@@ -1,3 +1,10 @@
+# Реализовать балансировку красно-черного дерева.
+# 1. Каждый узел промаркирован красным или чёрным цветом
+# 2. Корень и конечные узлы (листья) дерева — чёрные
+# 3. У красного узла родительский узел — чёрный
+# 4. Все простые пути из любого узла x до листьев содержат одинаковое количество чёрных узлов
+# 5. Чёрный узел может иметь чёрного родителя
+
 class RBTree:
 
     def __init__(self):
@@ -121,30 +128,30 @@ class RBTree:
             self.__fill__(result, node.right, 2 * index + 2)
 
     def __print_root__(self):
-        print("[" + str(self.root.value) + "]")
+        print("[" + str(self.root.value) + " " + str(self.root.color) + "]")
 
     def __print_part__(self, node):
         if node == self.root.left:
-            print("(" + str(node.value) + "l)")
+            print("(" + str(node.value) + " " + str(node.color) + " l)")
         elif node == self.root.right:
-            print("(" + str(node.value) + "r)")
+            print("(" + str(node.value) + " "  + str(node.color) + " r)")
         if node.left is not None:
-            print(str(node.left.value) + "l")
+            print(str(node.left.value) + " "  + str(node.color))
             self.__print_part__(node.left)
         if node.right is not None:
-            print(str(node.right.value) + "r")
+            print(str(node.right.value) + " "  + str(node.color))
             self.__print_part__(node.right)
 
     def __print_reversed_part__(self, node, values):
         if node == self.root.left:
-            values.append("(" + str(node.value) + "l)")
+            values.append("(" + str(node.value) + " "  + str(node.color) + " l)")
         elif node == self.root.right:
-            values.append("(" + str(node.value) + "r)")
+            values.append("(" + str(node.value) + " "  + str(node.color) + " r)")
         if node.left is not None:
-            values.append(str(node.left.value) + "l")
+            values.append(str(node.left.value) + " " + str(node.color) + " l")
             self.__print_part__(node.left)
         if node.right is not None:
-            values.append(str(node.right.value) + "r")
+            values.append(str(node.right.value) + " "  + str(node.color) + " r")
             self.__print_part__(node.right)
         return values
 
