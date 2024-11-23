@@ -76,6 +76,9 @@ class BinaryTree:
         return values
 
     def print_tree(self):
+        if self.root is None:
+            print("Tree is empty")
+            return
         values = self.__print_reversed_part__(self.root.left, []) # left part
         for value in values[::-1]:
             print(value)
