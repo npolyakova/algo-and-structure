@@ -97,18 +97,19 @@ class BinaryTree:
             self.insert_node(node.right.value, revers=True)
             node.right = None
 
-bt = BinaryTree()
-bt.insert_node(5)
-bt.insert_node(3)
-bt.insert_node(7)
-bt.insert_node(8)
-bt.insert_node(6)
-bt.insert_node(2)
-bt.insert_node(1)
-bt.insert_node(4)
+if __name__ == '__main__':
+    bt = BinaryTree()
+    bt.insert_node(5)
+    bt.insert_node(3)
+    bt.insert_node(7)
+    bt.insert_node(8)
+    bt.insert_node(6)
+    bt.insert_node(2)
+    bt.insert_node(1)
+    bt.insert_node(4)
 
-bt.print_tree()
+    bt.print_tree()
 
-print()
-bt.reverse_tree(bt.root)
-bt.print_tree()
+    print()
+    bt.reverse_tree(bt.root)
+    bt.print_tree()

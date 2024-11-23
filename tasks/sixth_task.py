@@ -45,4 +45,5 @@ def find_day(result):
     return sorted_days.pop()
 
 
-print(find_day(get_data()))
+if __name__ == '__main__':
+    print(find_day(get_data()))

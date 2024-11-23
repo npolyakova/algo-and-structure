@@ -30,11 +30,12 @@ class Graph:
 
         return dist if not negative_cycle else None
 
-cities_graph = Graph()
-cities_graph.add_edge('Москва', 'Санкт-Петербург', 7)
-cities_graph.add_edge('Санкт-Петербург', 'Выборг', 3)
-#cities_graph.add_edge('Санкт-Петербург', 'Рускеала', 4)
-cities_graph.add_edge('Выборг', 'Рускеала', 4)
-cities_graph.add_edge('Рускеала', 'Москва', 10)
-source = 'Москва'
-print(cities_graph.execute_bford_algorythm(source))
+if __name__ == '__main__':
+    cities_graph = Graph()
+    cities_graph.add_edge('Москва', 'Санкт-Петербург', 7)
+    cities_graph.add_edge('Санкт-Петербург', 'Выборг', 3)
+    #cities_graph.add_edge('Санкт-Петербург', 'Рускеала', 4)
+    cities_graph.add_edge('Выборг', 'Рускеала', 4)
+    cities_graph.add_edge('Рускеала', 'Москва', 10)
+    source = 'Москва'
+    print(cities_graph.execute_bford_algorythm(source))

@@ -122,5 +122,6 @@ class Relevance:
         self.__characteristics__[object_number - 1][param - 1] = value
 
 # результаты
-relevance = Relevance()
-relevance.execute_query()
+if __name__ == '__main__':
+    relevance = Relevance()
+    relevance.execute_query()
